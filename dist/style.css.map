@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/style.css"],
-  "sourcesContent": ["html {\n    background-color: red;\n}"],
-  "mappings": ";AAAA;AACI,oBAAkB;AACtB;",
+  "sourcesContent": ["html {\n    font-size: 1.125rem;\n}\n\n@media screen and (max-width:1280px) {\n    html {\n        font-size: calc(0.8131091617933723rem + 0.3898635477582845vw);\n    }\n}\n\n@media screen and (max-width:767px) {\n    html {\n        font-size: calc(0.6682525951557093rem + 0.6920415224913495vw);\n    }\n}\n\n@media screen and (max-width:478px) {\n    html {\n        font-size: calc(0.7497379454926625rem + 0.4192872117400419vw);\n    }\n}\n\n/* Footer */\n\n.footer_video video,\n.section_parallax video {\n    height: calc(100% + 280px)\n}\n\n.hero_second-text {\n    opacity: 1;\n}\n\n.hero_second-text h2,\n.hero_second-text p {\n    opacity: 0;\n}"],
+  "mappings": ";AAAA;AACI,aAAW;AACf;AAEA,OAAO,OAAO,IAAI,CAAC,SAAS,CAAC;AACzB;AACI,eAAW,KAAK,sBAAsB,EAAE;AAC5C;AACJ;AAEA,OAAO,OAAO,IAAI,CAAC,SAAS,CAAC;AACzB;AACI,eAAW,KAAK,sBAAsB,EAAE;AAC5C;AACJ;AAEA,OAAO,OAAO,IAAI,CAAC,SAAS,CAAC;AACzB;AACI,eAAW,KAAK,sBAAsB,EAAE;AAC5C;AACJ;AAIA,CAAC,aAAa;AACd,CAAC,iBAAiB;AACd,UAAQ,KAAK,KAAK,EAAE;AACxB;AAEA,CAAC;AACG,WAAS;AACb;AAEA,CAJC,iBAIiB;AAClB,CALC,iBAKiB;AACd,WAAS;AACb;",
   "names": []
 }
