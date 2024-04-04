@@ -184,8 +184,7 @@ window.Webflow.push(() => {
             trigger: '.footer',
             start: 'top-=60% top',
             end: 'center center',
-            scrub: 1.5,
-            markers: true
+            scrub: 1.5
         },
         yPercent: -50
     })
