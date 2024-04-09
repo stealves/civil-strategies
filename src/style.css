@@ -20,11 +20,20 @@ html {
     }
 }
 
+.page-wrapper {
+    opacity: 0;
+    transition: 200ms;
+}
+
+.page-wrapper.loaded {
+    opacity: 1;
+}
+
 /* Footer */
 
 .footer_video video,
 .section_parallax video {
-    height: calc(100% + 280px)
+    height: calc(100% + 280px);
 }
 
 .hero_second-text {
