@@ -154,9 +154,9 @@ window.Webflow.push(() => {
             let boxTimeline = gsap.timeline({ scrollTrigger: section })
             boxTimeline
                 .from(container, { scale: 0.5, borderRadius: '6rem' })
-                .from(background, { width: '0%', height: '50%', borderRadius: '0rem', duration: 2 })
-                .from(content, { y: 100, opacity: 0, duration: 1.5, delay: 1.5 }, '<')
-                .to(container, { scale: 1, borderRadius: '2rem', duration: 2 })
+                .from(background, { width: '0%', height: '50%', borderRadius: '0rem', duration: 1 })
+                .from(content, { y: 100, opacity: 0, duration: 1, delay: 0.5 }, '<')
+                .to(container, { scale: 1, borderRadius: '2rem', duration: 1 })
         })
     }
 
