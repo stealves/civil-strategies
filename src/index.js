@@ -40,9 +40,7 @@ window.Webflow.push(() => {
 
         // Animate on load
         let titleSplit = new SplitType('.hero_text h1', { types: 'chars,lines' })
-        let subtitleSplit = new SplitType('.hero_text p', { types: 'lines' })
         let secondTitleSplit = new SplitType('.hero_second-text h2', { types: 'chars,lines' })
-        let secondSubtitleSplit = new SplitType('.hero_second-text p', { types: 'lines' })
 
         let heroTimeline = gsap.timeline()
         heroTimeline
@@ -67,12 +65,11 @@ window.Webflow.push(() => {
                 delay: 0.5,
                 stagger: { each: 0.05, from: 'start', ease: 'slow' }
             }, '<')
-            .from('.section_hero p .line', {
+            .from('.section_hero p', {
                 opacity: 0,
                 y: '10%',
                 duration: 1.2,
-                delay: 1,
-                stagger: { each: 0.2, from: 'start' }
+                delay: 1
             }, '<')
 
         // Animate on scroll
@@ -121,43 +118,6 @@ window.Webflow.push(() => {
             scrub: 1,
             animation: textTimeline
         })
-
-        /**
-         * CTA reveal
-         */
-        let studyTimeline = gsap.timeline({
-            scrollTrigger: '.section_study'
-        })
-        studyTimeline
-            .from('.study_image', { width: 0, duration: 1 })
-            .from('.study_cta', { opacity: 0, y: 20, duration: 1 })
-            .to('.study_image', { width: '100%', duration: 1, ease: 'power4.out' })
-            .to('.study_cta', {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: 'power4.out',
-                stagger: { each: 0.5, from: 'end' }
-            })
-    }
-
-    /**
-     * Box sections
-     */
-    const boxSections = document.querySelectorAll('.section_box')
-    if (boxSections) {
-        boxSections.forEach(section => {
-            let background = section.querySelector('.box_background')
-            let content = section.querySelector('.box_content')
-            let container = section.querySelector('.box_content')
-
-            let boxTimeline = gsap.timeline({ scrollTrigger: section })
-            boxTimeline
-                .from(container, { scale: 0.5, borderRadius: '6rem' })
-                .from(background, { width: '0%', height: '50%', borderRadius: '0rem', duration: 1 })
-                .from(content, { y: 100, opacity: 0, duration: 1, delay: 0.5 }, '<')
-                .to(container, { scale: 1, borderRadius: '2rem', duration: 1 })
-        })
     }
 
     /**
@@ -198,13 +158,12 @@ window.Webflow.push(() => {
             .to('.main-wrapper', {
                 opacity: 0,
                 y: 100,
-                duration: 1,
+                duration: 0.5,
                 ease: 'slow'
             })
             .to('.nav_fixed', {
                 opacity: 0,
                 duration: 0.5,
-                delay: 0.5,
                 ease: 'power1.out'
             }, '<')
     }
@@ -217,7 +176,7 @@ window.Webflow.push(() => {
 
             setTimeout(function () {
                 window.location = goTo
-            }, 1000); // The duration of the "load out" animation in milliseconds
+            }, 500); // The duration of the "load out" animation in milliseconds
         })
     })
 })
