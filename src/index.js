@@ -169,14 +169,20 @@ window.Webflow.push(() => {
     }
 
     menuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault() // Prevent default anchor behavior
-            var goTo = this.getAttribute('href') // Store anchor href
-            loadOut()
+        const linkUrl = new URL(link, window.location.href)
+        const currentUrl = new URL(window.location.href)
+        const isAnchor = linkUrl.pathname === currentUrl.pathname && linkUrl.hash
 
-            setTimeout(function () {
-                window.location = goTo
-            }, 500); // The duration of the "load out" animation in milliseconds
-        })
+        if (!isAnchor) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault() // Prevent default anchor behavior
+                var goTo = this.getAttribute('href') // Store anchor href
+                loadOut()
+
+                setTimeout(function () {
+                    window.location = goTo
+                }, 500); // The duration of the "load out" animation in milliseconds
+            })
+        }
     })
 })
